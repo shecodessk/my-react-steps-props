@@ -2,10 +2,14 @@ import TiktokListItems from "./TiktokListItems.js";
 import Button from "./Button.js";
 import Home from "./components/Home.js";
 import Users from "./components/Users.js";
-import { Route, Switch } from "react-router-dom";
+import About from "./components/About.js";
+import Navigation from "./components/Navigation.js";
+import { Route } from "react-router-dom";
+
 function App() {
   return (
     <>
+      <Navigation />
       <h1>Hello Clarice</h1>
       <h2>A Summary of TikTok Videos I've Watch</h2>
       <TiktokListItems />
@@ -15,12 +19,9 @@ function App() {
       <Button name="#2" />
       <Button name="#3" />
 
-      <Route path="/home">
-        <Home />
-      </Route>
-      <Route path="/users">
-        <Users />
-      </Route>
+      <Route path="/home" component={Home}></Route>
+      <Route path="/users" component={Users}></Route>
+      <Route path="/about-me" component={About}></Route>
     </>
   );
 }
